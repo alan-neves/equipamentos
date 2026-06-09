@@ -1,5 +1,6 @@
 services:
   equipamentos:
+    build: .
     image: equipamentos:latest
     container_name: equipamentos
     ports:
@@ -23,8 +24,6 @@ services:
       MYSQL_USER: equipamentos
       MYSQL_PASSWORD: equipamentos
       MYSQL_ROOT_PASSWORD: equipamentos
-    volumes:
-      - mariadb_data:/var/lib/mysql
     networks:
       - equipamentos-network
 
@@ -51,6 +50,3 @@ services:
 
 networks:
   equipamentos-network:
-
-volumes:
-  mariadb_data:
